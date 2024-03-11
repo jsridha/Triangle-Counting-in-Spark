@@ -28,7 +28,7 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 Execution
 ---------
-All of the build & execution commands are organized in the Makefile. Additionally, a sample dataset is included in the twitterdata.tar.gz archive.
+All of the build & execution commands are organized in the Makefile. To run the project, you will need a dataset of directed edges in CSV format, with each line indicating a new edge for consideration.
 1) Unzip project file.
 2) Open command prompt.
 3) Navigate to directory where project files unzipped.
