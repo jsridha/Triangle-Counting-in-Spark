@@ -1,0 +1,8 @@
+*.class
+*.log
+*.csv
+
+# Folders #
+
+/Twitter-dataset
+/output
