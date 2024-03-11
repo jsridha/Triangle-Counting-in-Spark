@@ -10,8 +10,8 @@ object RepDMain {
 
     def main(args: Array[String]) {
         val logger: org.apache.log4j.Logger = LogManager.getRootLogger
-        if (args.length != 2) {
-            logger.error("Usage:\njoins.RepRMain <input dir> <output dir>")
+        if (args.length != 3) {
+            logger.error("Usage:\njoins.RepDMain <input dir> <output dir> <max value>")
             System.exit(1)
         }
         val conf = new SparkConf().setAppName("Rep-R")
@@ -25,7 +25,7 @@ object RepDMain {
     //    try { hdfs.delete(new org.apache.hadoop.fs.Path(args(1)), true) } catch { case _: Throwable => {} }
             // ================
 
-        val MAX = 1000
+        val MAX = args(2)
 
         // Read input text file into a RDD
         val textFile = sc.textFile(args(0))

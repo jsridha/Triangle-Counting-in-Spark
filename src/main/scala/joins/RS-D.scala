@@ -10,8 +10,8 @@ object RSDMain {
   
   def main(args: Array[String]) {
     val logger: org.apache.log4j.Logger = LogManager.getRootLogger
-    if (args.length != 2) {
-      logger.error("Usage:\njoins.RSDMain <input dir> <output dir>")
+    if (args.length != 3) {
+      logger.error("Usage:\njoins.RSDMain <input dir> <output dir> <max value>")
       System.exit(1)
     }
     val conf = new SparkConf().setAppName("RS-D")
@@ -25,7 +25,7 @@ object RSDMain {
 //    try { hdfs.delete(new org.apache.hadoop.fs.Path(args(1)), true) } catch { case _: Throwable => {} }
 		// ================
 
-    val MAX = 240000
+    val MAX = args(2)
 
     val textFile = sc.textFile(args(0))
     val outgoings = textFile.map{ // Convert set of edges into data frame of outgoing edges from each user
